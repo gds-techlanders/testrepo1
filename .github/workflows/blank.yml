@@ -31,6 +31,9 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+        env:
+          var1: ${{ secrets.var1 }}
+          var2: ${{ secrets.var2 }}
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
