@@ -10,4 +10,7 @@ jobs:
       - uses: rtCamp/action-slack-notify@v2
         env:
            SLACK_WEBHOOK: ${{ secrets.slack_secret }}
+           SLACK_COLOR: ${{ job.status }}
+           SLACK_TITLE: Yay, Its a success
+           SLACK_MESSAGE: 'Build completed for ${{ GITHUB.WORKFLOW }} number ${{ GITHUB.RUN_NUMBER }}'
 # Generate Slack Secret from https://techlanders-workspace.slack.com/apps/A0F7XDUAZ-incoming-webhooks
